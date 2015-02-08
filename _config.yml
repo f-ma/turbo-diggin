@@ -1,0 +1,11 @@
+# Site settings
+title: Turbo Diggin'
+email: fmabroad@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+  Web development planet blog! Learn everything about web development and more.
+baseurl: /turbo-diggin # the subpath of your site, e.g. /blog/
+url: "http://f-ma.github.io" # the base hostname & protocol for your site
+twitter_username: envyInside
+github_username:  f-ma
+# Build settings
+markdown: kramdown
