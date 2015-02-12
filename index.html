@@ -4,20 +4,28 @@ layout: default
 <div class="home">
   <ul class="digging-list">
   {% for page in site.pages %}
-  {% if page.active %}
-    <li class="digging-item">
-      <div class="row">
-        <div class="col-md-2">
-          <div class="digging-shortcut">
-            <a class="digging-logo digging-{{page.type}}" href="{{page.url | prepend: site.baseurl}}"></a>
-            <a class="digging-label" href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a>
+    {% if page.active %}
+      <li class="digging-item">
+        <div class="row">
+          <div class="col-md-2">
+            <div class="digging-shortcut">
+              <a class="digging-logo digging-{{page.type}}" href="{{page.url | prepend: site.baseurl}}"></a>
+              <a class="digging-label" href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a>
+            </div>
+            <div class="digging-post-count">
+              <span class="count-number">{{site.categories[page.type] | size}}</span>
+              <span>Diggin'</span>
+            </class>
+            </div>
           </div>
-          <div class="digging-post-count">
-            <span class="count-number">{{site.categories[page.type] | size}}</span>
-            <span>Diggin'</span>
-          </class>
+          <div class="col-md-10">
+            <p class="digging-describe">{{page.describe}}</p>
+            <h3 class=""><strong>Newest Diggin'</strong></h3>
+            {% for post int site.posts %}
+            {% endfor %}
           </div>
         </div>
+<<<<<<< HEAD
         <div class="col-md-10">
           <p class="digging-describe">{{page.describe}}</p>
           <h3 class=""><strong>Newest Diggin'</strong></h3>
@@ -35,6 +43,10 @@ layout: default
       </div>
     </li>
   {% endif %}
+=======
+      </li>
+    {% endif %}
+>>>>>>> adae3d6ef8384b41de6cb99044da0e685c1790e8
   {% endfor %}
   </ul>
 </div>
