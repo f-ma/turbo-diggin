@@ -1,6 +1,34 @@
 ---
 layout: default
 ---
+<div class="home">
+  <ul class="digging-list">
+  {% for page in site.pages %}
+  {% if page.active %}
+    <li class="digging-item">
+      <div class="row">
+        <div class="col-md-2">
+          <div class="digging-shortcut">
+            <a class="digging-logo digging-{{page.type}}" href="{{page.url | prepend: site.baseurl}}"></a>
+            <a class="digging-label" href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a>
+          </div>
+          <div class="digging-post-count">
+            <span class="count-number">{{site.categories[page.type] | size}}</span>
+            <span>Diggin'</span>
+          </class>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <p class="digging-describe">{{page.describe}}</p>
+          <h3 class=""><strong>Newest Diggin'</strong></h3>
+
+        </div>
+      </div>
+    </li>
+  {% endif %}
+  {% endfor %}
+  </ul>
+</div>
 
 <div class="home">
 

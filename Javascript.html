@@ -1,15 +1,19 @@
 ---
 layout: page
-title: Javascript It!
+title: Javascript
 permalink: /javascript/
+type: javascript
+active: true
+describe: >
+  JavaScript (/ˈdʒɑːvəˌskrɪpt/; JS) is a dynamic computer programming language.
+  It is most commonly used as part of web browsers, whose implementations allow client-side scripts to interact with the user, control the browser, communicate asynchronously, and alter the document content that is displayed
 ---
 
 <ul class="post-list">
-  {% for post in site.posts %}
+  {% for post in site.categories.javascript %}
     <li>
       <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-      <span class="post-meta">{{ post.categories }}</span>
-      
+      <span class="post-meta">{{ post.categories | join: " "}}</span>
 
       <h2>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
