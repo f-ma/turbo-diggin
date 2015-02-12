@@ -21,7 +21,16 @@ layout: default
         <div class="col-md-10">
           <p class="digging-describe">{{page.describe}}</p>
           <h3 class=""><strong>Newest Diggin'</strong></h3>
+          {% for post in site.categories[page.type] %}
+            <li>
+              <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+              <span class="post-meta">{{ post.categories | join: " "}}</span>
 
+              <h2>
+                <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+              </h2>
+            </li>
+          {% endfor %}
         </div>
       </div>
     </li>
