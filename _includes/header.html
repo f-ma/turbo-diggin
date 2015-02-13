@@ -2,10 +2,10 @@
   <div class="col-md-3">
     <a class="logo logo-on-header" href="{{ site.baseurl }}/"></a>
   </div>
-  <div class="col-md-3 col-md-offset-6">
+  <div class="col-md-2 col-md-offset-7">
     {% for page in site.pages %}
       {% if page.onHeader %}
-        <h6 class="text-muted">{{ page.willing }}</h6>
+        <h6>{{ page.willing }}</h6>
         <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
       {% endif %}
     {% endfor %}

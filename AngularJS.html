@@ -1,0 +1,27 @@
+---
+layout: page
+title: AngularJS
+permalink: /angularjs/
+type: angularjs
+active: true
+description: >
+  AngularJS, commonly referred to as Angular, is an open-source web application framework
+  maintained by Google and a community of individual developers and corporations to address
+  many of the challenges encountered in developing single-page applications. Its goal is to
+  simplify both development and testing of such applications by providing a framework for
+  client-side model–view–controller (MVC) architecture, along with components commonly used
+  in rich internet applications.
+---
+
+<ul class="post-list">
+  {% for post in site.categories.javascript %}
+    <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <span class="post-meta">{{ post.categories | join: " "}}</span>
+
+      <h2>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+    </li>
+  {% endfor %}
+</ul>
