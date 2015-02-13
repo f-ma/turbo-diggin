@@ -1,16 +1,23 @@
 <footer class="site-footer row">
   <div class="col-xs-6 col-md-4 col-md-offset-2">
-    <p class="text">{{ site.description }}</p>
+    <p>{{ site.description }}</p>
+
+    <h4>Digging Things</h4>
+    <ul class="digging-things">
+      {% for page in site.pages %}
+        {% if page.active %}
+          <li><a class="text-capitalize" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
   </div>
-  <div class="col-md-2 hidden-xs hidden-sm">
-    <div class="author-picture-crop">
-      <img class="author-picture" src='{{ "/images/huypham.jpg" | prepend: site.baseurl }}' alt="author's personal picture" />
-    </div>
-  </div>
-  <div class="col-xs-4">
+
+  <div class="col-xs-2">
+    <br />
+    <br />
     <ul class="social-media-list">
       {% if site.author %}
-      <li><strong>{{ site.author }}</strong></li>
+      <li><h4>{{ site.author }}</strong></h4>
       {% endif %}
       <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
       {% if site.github_username %}
@@ -42,5 +49,13 @@
       </li>
       {% endif %}
     </ul>
+  </div>
+  <div class="col-md-2 hidden-xs hidden-sm">
+    <div class="author-picture-crop border-effect-container">
+      <svg width="100%" height="100%">
+        <line x1="0" y1="0" x2="600" y2="0" />
+      </svg>
+      <img class="author-picture" src='{{ "/images/huypham.jpg" | prepend: site.baseurl }}' alt="author's personal picture" />
+    </div>
   </div>
 </footer>

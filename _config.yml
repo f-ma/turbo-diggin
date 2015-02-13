@@ -3,6 +3,7 @@ title: Turbo Diggin'
 email: fmabroad@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Web development planet blog! Learn everything about web development and more.
+diggingThings: javascript angularJS MEAN pure-css magento
 baseurl: /turbo-diggin # the subpath of your site, e.g. /blog/
 url: "http://f-ma.github.io" # the base hostname & protocol for your site
 author: Huy Pham

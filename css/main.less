@@ -110,17 +110,27 @@ body {
 .site-footer {
   border-top: solid 4px #eee;
   padding: 30px 0;
-  background-color: #f3f3f3;
+  background-color: #2c3e50;
+  color: white;
+  a, a:hover {
+    color: white;
+  }
+  .digging-things {
+    list-style: none;
+  }
   .social-media-list {
     list-style: none;
+    padding: 0px 0px 0px 0px;
     > * {
       margin: 3px 0;
     }
   }
   .author-picture-crop {
+    max-width: 150px;
     overflow: hidden;
+    border: solid 3px white;
     .author-picture {
-      width: 200%;
+      width: 220%;
       margin: -15px 0px 0px -80px;
     }
   }
@@ -135,10 +145,40 @@ body {
     height: 16px;
     vertical-align: middle;
     path {
-      fill: grey;
+      fill: white;
     }
   }
 }
+/*
+ * border effect
+ */
+.border-effect-container {
+  position: relative;
+  overflow: hidden;
+  background: #ddd;
+  svg {
+    position: absolute;
+    line {
+      stroke-width: 10;
+      stroke: #000;
+      fill: none;
+      stroke-dasharray: 200;
+      -webkit-transition: -webkit-transform .6s ease-out;
+      transition: transform .6s ease-out;
+    }
+  }
+}
+.border-effect-container:hover {
+  svg {
+    line {
+      -webkit-transform: translateX(-400px);
+      transform: translateX(-400px);
+    }
+  }
+}
+/*
+ * flex
+ */
 .flex-container, .flex-container-wrap {
   display: flex;
   flex-flow: row wrap;
