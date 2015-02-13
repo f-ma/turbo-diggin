@@ -1,0 +1,88 @@
+---
+---
+body {
+  font-size: 13px;
+}
+.site-header {
+  padding: 15px 0px;
+  border-top: solid 8px #333;
+  border-bottom: solid 1px #eee;
+}
+.site-header .logo {
+  margin: auto;
+  display: block;
+  width: 160px;
+  height: 100px;
+  background: url({{ "/images/graphs.png?v=1.1" | prepend: site.baseurl }}) no-repeat;
+}
+.site-header .page-link {
+  display: inline-block;
+  height: 100px;
+  line-height: 100px;
+  color: #333;
+  font-size: 18px;
+}
+.digging-list {
+  list-style: none;
+  padding: 30px 0;
+}
+.digging-item {
+  padding: 15px 0;
+}
+.digging-shortcut > * {
+  float: right;
+  clear: both;
+}
+.digging-shortcut .digging-logo {
+  display: block;
+  margin-bottom: 5px;
+  width: 70px;
+  height: 70px;
+  background: url({{"/images/graphs.png?v=1.1" | prepend: site.baseurl}}) no-repeat;
+}
+.digging-shortcut .digging-label {
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}
+.digging-shortcut .digging-javascript {
+  background-position: 0px -160px;
+}
+.digging-shortcut .digging-magento {
+  background-position: -100px -145px;
+  width: 80px;
+  height: 100px;
+}
+.digging-shortcut .digging-mean {
+  background-position: -205px -150px;
+  width: 90px;
+  height: 90px;
+}
+.digging-post-count > * {
+  float: right;
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
+.digging-post-count .count-number {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 36px;
+}
+.digging-describe {
+  font-size: 18px;
+  font-style: italic;
+  opacity: .6;
+}
+/*
+ *.icon
+ */
+.icon svg {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+.icon svg path {
+  fill: grey;
+}

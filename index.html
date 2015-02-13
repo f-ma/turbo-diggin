@@ -19,42 +19,32 @@ layout: default
             </div>
           </div>
           <div class="col-md-10">
-            <p class="digging-describe">{{page.describe}}</p>
-            <h3 class=""><strong>Newest Diggin'</strong></h3>
+            <p class="digging-describe">{{page.description}}</p>
+            <h3 class="digging-page-title"><strong>Newest Diggin'</strong></h3>
+            <ul class="digging-posts-by-category">
             {% for post in site.categories[page.type] %}
-              <li>
-                <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-                <span class="post-meta">{{ post.categories | join: " "}}</span>
-
-                <h2>
-                  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-                </h2>
-              </li>
+                <li class="post-item">
+                  <div class="row">
+                    <div class="col-md-1 post-decoration"><span>{{post.title | split: '' | first}}</span></div>
+                    <div class="col-md-11 post-preview">
+                      <div class="post-meta">
+                        <span class="">{{post.date | date: "%b %-d, %Y"}}</span>
+                        <span class="text-capitalize">{{ post.categories | join: " "}}</span>
+                      </div>
+                      <div class="post-title flex-container">
+                        <a class="flex-item post-link" href="{{ post.url | prepend: site.baseurl }}"><h4 class="flex-item"><strong>{{ post.title }}</strong></h4></a>
+                        <div class="flex-item"><strong>{{ post.timeToRead}}</strong> <span class="text-muted">minutes</span></div>
+                      </div>
+                      <p>{{post.description}}</p>
+                    </div>
+                  </div>
+                </li>
             {% endfor %}
+            </ul>
           </div>
         </div>
       </li>
     {% endif %}
   {% endfor %}
   </ul>
-</div>
-
-<div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
 </div>
