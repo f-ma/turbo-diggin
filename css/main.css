@@ -82,9 +82,50 @@
 /*
  * site
  */
+html {
+  height: 100% !important;
+  min-height: 100% !important;
+}
 body {
+  height: 100%;
+  min-height: 100%;
   color: #4D4741;
   background-color: #EEEADD;
+}
+body > .container-fluid,
+body .container {
+  height: 100% !important;
+  min-height: 100% !important;
+}
+.site-marketing {
+  height: 100%;
+  min-height: 100%;
+  background-color: #D3CCAB;
+  padding: 30px;
+}
+.site-marketing #logo-marketing {
+  display: block;
+  width: 270px;
+  height: 190px;
+}
+.site-marketing .references {
+  position: absolute;
+}
+.site-marketing .content {
+  justify-content: space-around;
+  height: 100%;
+  min-height: 100%;
+}
+.site-marketing .content .literal {
+  border-bottom: solid 2px #4d4741;
+}
+.site-marketing .content .literal h1 {
+  font-size: 5em;
+  font-weight: bold;
+  line-height: .8em;
+}
+.site-marketing .content .literal h6 {
+  font-size: 1.6em;
 }
 .site-header .page-link {
   color: white;
