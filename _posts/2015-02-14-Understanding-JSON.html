@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "Understanding JSON"
+date:   2015-02-14 00:06:01
+categories: javascript json
+timeToRead: 15
+description: >
+  JSON is a data format, <strong>not</strong> a programming language. <strong>JSON is not a part of JavaScript</strong> even though they
+  share syntax. JSON is also not solely used by JavaScript, since it is a data format. There are parsers
+  and serializers available in many programming languages.
+---
+<!--article tag-->
+<p>{{ page.description }}</p>
+<h2>SYNTAX</h2>
+<p>JSON syntax allows the representation of three type of values:</p>
+<ol>
+  <li>
+    <strong>Simple values</strong> - Strings, numbers, Booleans, and <strong>null</strong> can all be represented
+    in JSON using the same syntax as JavaScript. The special value <strong>undefined</strong> is not supported.
+  </li>
+  <li>
+    <strong>Objects</strong> - The first complex data type, objects represent ordered key-value pairs. Each
+    value may be a primitive type or a complex type.
+  </li>
+  <li>
+    <strong>Arrays</strong> - The second complex data type, arrays represent an ordered list of values that
+    are accessible via a number index. The values may be of any type, including simple values, objects, and
+    even other arrays.
+  </li>
+</ol>
+<h2>Simple Values</h2>
+In its simplest form, JSON represents a small number of simple values. For examples, the following is valid JSON:
+{% highlight js %}
+5
+{% endhighlight %}
+This is JSON that represents the number <strong>5</strong>. Likewise, the following is also valid JSON representing
+a string:
+{% highlight js %}
+"Hello world!"
+{% endhighlight %}
+
+<!--article tag-->

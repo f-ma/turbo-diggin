@@ -29,7 +29,7 @@ layout: default
                     <div class="col-md-11 post-preview">
                       <div class="post-meta">
                         <span class="">{{post.date | date: "%b %-d, %Y"}}</span>
-                        <span class="text-capitalize">{{ post.categories | join: " "}}</span>
+                        <span class="text-uppercase">{{ post.categories | join: " "}}</span>
                       </div>
                       <div class="post-title flex-container">
                         <a class="flex-item post-link" href="{{ post.url | prepend: site.baseurl }}"><h4 class="flex-item"><strong>{{ post.title }}</strong></h4></a>
