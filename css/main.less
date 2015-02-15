@@ -262,14 +262,14 @@ body {
 }
 
 .site-footer {
-  padding: 60px 0;
-  background-color: #DA6D5E;
+  position: relative;
+  padding: 0;
   color: white;
+  background-color: #4D4741;
+  border-top: solid 8px #D3CCAB;
+  border-bottom: solid 8px #D3CCAB;
   a, a:hover {
     color: white;
-  }
-  .digging-things {
-    list-style: none;
   }
   .social-media-list {
     list-style: none;
@@ -285,6 +285,66 @@ body {
     .author-picture {
       width: 220%;
       margin: -15px 0px 0px -80px;
+    }
+  }
+  .footer-meta {
+    align-items: flex-end;
+    justify-content: center;
+    border-bottom: solid 4px white;
+    padding: 45px 0 0 0;
+    .footer-logo {
+      padding: 0 0 15px 0;
+      .logo {
+        margin: auto;
+        display: block;
+        width: 160px;
+        height: 100px;
+        background: url(~'{{ "/images/graphs.png?v=2" | prepend: site.baseurl }}') no-repeat;
+      }
+    }
+    .footer-about {
+      margin-left:20%;
+      border-left: solid 2px white;
+      border-right: solid 2px white;
+      > * {
+        padding: 0 30px;
+      }
+    }
+    .hire-me {
+      padding: 0 60px;
+    }
+  }
+  .footer-main {
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #DA6D5E;
+    padding: 0 0 30px 0;
+    .things {
+      position: relative;
+      left: 2px;
+      z-index: 1;
+      border-left: solid 2px white;
+      border-bottom: solid 2px white;
+      border-right: solid 2px #DA6D5E;
+      .item {
+        padding: 0 20px;
+        h4 {
+          font-weight: bold;
+        }
+      }
+    }
+    .footer-personal-stuffs {
+      padding: 15px 22px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      > * {
+        margin-right: 45px;
+      }
+    }
+    .graphs {
+      padding: 30px 45px 0 45px;
+      border-right: solid 2px white;
+      border-left: solid 2px white;
     }
   }
 }
