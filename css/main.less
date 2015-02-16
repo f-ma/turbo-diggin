@@ -130,17 +130,22 @@ body {
   }
   .references {
     position: absolute;
+    a, a:hover {
+      color: #4d4741;
+    }
   }
   .content {
-    -webkit-justify-content: space-around;
-    justify-content: space-around;
+    -webkit-justify-content: center;
+    justify-content: center;
     height: 100%;
     min-height: 100%;
     .decoration {
       width:20%;
+      max-width: 300px;
     }
     .literal {
       border-bottom: solid 2px #4d4741;
+      margin-left: 60px;
       h1 {
         font-size: 5em;
         font-weight: bold;

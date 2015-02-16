@@ -118,17 +118,23 @@ body .container {
 .site-marketing .references {
   position: absolute;
 }
+.site-marketing .references a,
+.site-marketing .references a:hover {
+  color: #4d4741;
+}
 .site-marketing .content {
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
+  -webkit-justify-content: center;
+  justify-content: center;
   height: 100%;
   min-height: 100%;
 }
 .site-marketing .content .decoration {
   width: 20%;
+  max-width: 300px;
 }
 .site-marketing .content .literal {
   border-bottom: solid 2px #4d4741;
+  margin-left: 60px;
 }
 .site-marketing .content .literal h1 {
   font-size: 5em;
