@@ -218,9 +218,8 @@ body .container {
 }
 .digging-item {
   padding: 30px 0;
-  margin: 45px 0;
-  -webkit-justify-content: center;
-  justify-content: center;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
   -webkit-align-items: flex-start;
   border-bottom: solid 2px #4d4741;
 }
@@ -271,7 +270,8 @@ body .container {
   font-size: 36px;
 }
 .digging-item .content {
-  max-width: 800px;
+  max-width: 850px;
+  padding: 0 0 0 15px;
 }
 .digging-item .content .digging-describe {
   font-style: italic;
@@ -279,7 +279,7 @@ body .container {
   padding: 0 30px 0 0;
 }
 .digging-item .content .digging-page-title {
-  margin: 45px 0 15px 0;
+  margin: 20px 0 15px 0;
 }
 .digging-item .content .digging-posts-by-category {
   list-style: none;

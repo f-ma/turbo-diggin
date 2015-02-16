@@ -6,7 +6,7 @@ layout: marketing
   {% for page in site.pages %}
     {% if page.active %}
       <li class="digging-item flex-container">
-          <div class="decorate">
+          <div class="decorate hidden-xs hidden-sm">
             <div class="digging-shortcut">
               <a class="digging-logo digging-{{page.type}}" href="{{page.url | prepend: site.baseurl}}"></a>
               <a class="digging-label" href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a>
@@ -17,7 +17,7 @@ layout: marketing
             </div>
           </div>
           <div class="content">
-            <p class="digging-describe">{{page.description}}</p>
+            <p class="digging-describe hidden-xs hidden-sm">{{page.description}}</p>
             <h3 class="digging-page-title"><strong>Newest Diggin'</strong></h3>
             <ul class="digging-posts-by-category uncontent-list">
             {% for post in site.categories[page.type] limit:5 %}
