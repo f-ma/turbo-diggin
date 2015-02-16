@@ -209,79 +209,143 @@ body .container {
 }
 .digging-list {
   list-style: none;
-  padding: 30px 120px 30px 30px;
+  padding: 30px 0;
+  max-width: 900px;
+  margin: auto;
+  background-color: white;
+  border-left: solid 2px #4d4741;
+  border-right: solid 2px #4d4741;
 }
 .digging-item {
-  padding: 15px 0;
+  padding: 30px 0;
   margin: 45px 0;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  border-bottom: solid 2px #4d4741;
 }
-.digging-item .digging-shortcut > * {
+.digging-item .decorate {
+  padding: 0 30px 0 45px;
+}
+.digging-item .decorate .digging-shortcut > * {
   float: right;
   clear: both;
 }
-.digging-item .digging-shortcut .digging-logo {
+.digging-item .decorate .digging-shortcut .digging-logo {
   display: block;
   margin-bottom: 5px;
   width: 70px;
   height: 85px;
   background: url({{"/images/graphs.png?v=2" | prepend: site.baseurl}}) no-repeat;
 }
-.digging-item .digging-shortcut .digging-label {
+.digging-item .decorate .digging-shortcut .digging-label {
   color: #4d4741;
   font-size: 16px;
   font-weight: bold;
 }
-.digging-item .digging-shortcut .digging-javascript {
+.digging-item .decorate .digging-shortcut .digging-javascript {
   background-position: -1px -110px;
 }
-.digging-item .digging-shortcut .digging-magento {
+.digging-item .decorate .digging-shortcut .digging-magento {
   background-position: -311px -110px;
 }
-.digging-item .digging-shortcut .digging-mean {
+.digging-item .decorate .digging-shortcut .digging-mean {
   background-position: -391px -110px;
 }
-.digging-item .digging-shortcut .digging-angularjs {
+.digging-item .decorate .digging-shortcut .digging-angularjs {
   background-position: -81px -110px;
 }
-.digging-item .digging-shortcut .digging-pure-css {
+.digging-item .decorate .digging-shortcut .digging-pure-css {
   background-position: -161px -110px;
   width: 140px;
 }
-.digging-item .digging-post-count > * {
+.digging-item .decorate .digging-post-count > * {
   float: right;
   clear: both;
   margin: 0;
   padding: 0;
 }
-.digging-item .digging-post-count .count-number {
+.digging-item .decorate .digging-post-count .count-number {
   margin-top: 15px;
   font-weight: bold;
   font-size: 36px;
 }
-.digging-item .digging-describe {
+.digging-item .content {
+  max-width: 800px;
+}
+.digging-item .content .digging-describe {
   font-style: italic;
   opacity: .6;
+  padding: 0 30px 0 0;
 }
-.digging-item .digging-page-title {
+.digging-item .content .digging-page-title {
   margin: 45px 0 15px 0;
 }
-.digging-item .digging-posts-by-category {
+.digging-item .content .digging-posts-by-category {
   list-style: none;
-  margin: 30px 0;
+  margin: 30px 0 30px 40px;
 }
-.digging-item .digging-posts-by-category .post-item .post-decoration {
+.digging-item .content .digging-posts-by-category .post-item:last-child {
+  border-bottom: solid 2px #4d4741;
+}
+.digging-item .content .digging-posts-by-category .post-item {
+  border-top: solid 2px #4d4741;
+}
+.digging-item .content .digging-posts-by-category .post-item .post-decoration {
   font-size: 48px;
-  padding-top: 15px;
+  padding: 5px 20px;
+  border: solid 2px #4d4741;
+  border-right: none;
 }
-.digging-item .digging-posts-by-category .post-item .post-preview {
-  border-left: solid 3px #4d4741;
-  padding: 15px;
+.digging-item .content .digging-posts-by-category .post-item .post-preview {
+  border-left: solid 4px #4d4741;
+  padding: 15px 30px;
 }
-.digging-item .digging-posts-by-category .post-item .post-preview .post-meta {
+.digging-item .content .digging-posts-by-category .post-item .post-preview .post-meta {
   color: grey;
+}
+.digging-item .content .digging-posts-by-category .post-item .post-preview .post-title {
+  height: 40px;
+  line-height: 40px;
+  margin: 5px 0 15px -70px;
+  border: solid 2px #4d4741;
+  border-top: solid 3px;
+  border-bottom: solid 3px;
+  overflow: hidden;
+}
+.digging-item .content .digging-posts-by-category .post-item .post-preview .post-title > * {
+  height: 40px;
+  line-height: 40px;
+}
+.digging-item .content .digging-posts-by-category .post-item .post-preview .post-title .first-char {
+  width: 34px;
+  text-align: center;
+  background-color: #d3ccab;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+.digging-item .content .digging-posts-by-category .post-item .post-preview .post-title .time-to-read {
+  width: 140px;
+  background-color: #da6d5e;
+  color: white;
+  text-align: center;
+  border-left: solid 2px #4d4741;
+}
+.digging-item .content .digging-posts-by-category .post-item .post-preview .post-title a,
+.digging-item .content .digging-posts-by-category .post-item .post-preview .post-title a:hover {
+  padding: 0 0 0 30px;
+  color: #4d4741;
+}
+.digging-item .content .digging-posts-by-category .post-item .post-preview .post-title a h4,
+.digging-item .content .digging-posts-by-category .post-item .post-preview .post-title a:hover h4 {
+  width: 510px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .post {
   padding: 60px 120px;
+  background-color: white;
 }
 .post .post-header {
   margin: 0 0 30px 0;

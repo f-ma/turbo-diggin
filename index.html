@@ -1,13 +1,12 @@
 ---
 layout: marketing
 ---
-<div class="home">
-  <ul class="digging-list">
+<div class="home row">
+  <ul class="digging-list uncontent-list">
   {% for page in site.pages %}
     {% if page.active %}
-      <li class="digging-item">
-        <div class="row">
-          <div class="col-md-2">
+      <li class="digging-item flex-container">
+          <div class="decorate">
             <div class="digging-shortcut">
               <a class="digging-logo digging-{{page.type}}" href="{{page.url | prepend: site.baseurl}}"></a>
               <a class="digging-label" href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a>
@@ -15,25 +14,24 @@ layout: marketing
             <div class="digging-post-count">
               <span class="count-number">{{site.categories[page.type] | size}}</span>
               <span>Diggin'</span>
-            </class>
             </div>
           </div>
-          <div class="col-md-10">
+          <div class="content">
             <p class="digging-describe">{{page.description}}</p>
             <h3 class="digging-page-title"><strong>Newest Diggin'</strong></h3>
-            <ul class="digging-posts-by-category">
-            {% for post in site.categories[page.type] %}
+            <ul class="digging-posts-by-category uncontent-list">
+            {% for post in site.categories[page.type] limit:5 %}
                 <li class="post-item">
-                  <div class="row">
-                    <div class="col-md-1 post-decoration"><span>{{post.title | split: '' | first}}</span></div>
-                    <div class="col-md-11 post-preview">
+                  <div class="flex-container">
+                    <div class="post-preview">
                       <div class="post-meta">
                         <span class="">{{post.date | date: "%b %-d, %Y"}}</span>
                         <span class="text-uppercase">{{ post.categories | join: " "}}</span>
                       </div>
                       <div class="post-title flex-container">
+                        <h4 class="first-char"><strong>{{post.title | split: '' | first}}</strong></h4>
                         <a class="flex-item post-link" href="{{ post.url | prepend: site.baseurl }}"><h4 class="flex-item"><strong>{{ post.title }}</strong></h4></a>
-                        <div class="flex-item"><strong>{{ post.timeToRead}}</strong> <span class="text-muted">minutes</span></div>
+                        <div class="flex-item time-to-read"><strong>{{ post.timeToRead}}'</strong></div>
                       </div>
                       <p>{{post.description}}</p>
                     </div>
@@ -42,7 +40,6 @@ layout: marketing
             {% endfor %}
             </ul>
           </div>
-        </div>
       </li>
     {% endif %}
   {% endfor %}
