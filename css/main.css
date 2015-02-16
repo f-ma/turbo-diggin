@@ -113,8 +113,7 @@ body .container {
 }
 .site-marketing #logo-marketing {
   display: block;
-  width: 270px;
-  height: 190px;
+  width: 100%;
 }
 .site-marketing .references {
   position: absolute;
@@ -124,6 +123,9 @@ body .container {
   justify-content: space-around;
   height: 100%;
   min-height: 100%;
+}
+.site-marketing .content .decoration {
+  width: 20%;
 }
 .site-marketing .content .literal {
   border-bottom: solid 2px #4d4741;
