@@ -66,12 +66,18 @@
 .flex-container,
 .flex-container-wrap {
   display: flex;
+  display: -webkit-flex;
+  -webkit-flex-flow: row nowrap;
   flex-flow: row nowrap;
+  -webkit-justify-content: flex-start;
   justify-content: flex-start;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-align-content: stretch;
   align-content: stretch;
 }
 .flex-container-wrap {
+  -webkit-flex-wrap: wrap !important;
   flex-wrap: wrap !important;
 }
 .uncontent-list {
@@ -100,7 +106,9 @@ body .container {
 .site-marketing {
   height: 100%;
   min-height: 100%;
+  overflow: hidden;
   background-color: #D3CCAB;
+  border-bottom: solid 4px #4d4741;
   padding: 30px;
 }
 .site-marketing #logo-marketing {
@@ -112,6 +120,7 @@ body .container {
   position: absolute;
 }
 .site-marketing .content {
+  -webkit-justify-content: space-around;
   justify-content: space-around;
   height: 100%;
   min-height: 100%;
@@ -166,7 +175,9 @@ body .container {
   padding: 0 60px;
 }
 .site-header .header-main {
+  -webkit-justify-content: center;
   justify-content: center;
+  -webkit-align-items: flex-start;
   align-items: flex-start;
 }
 .site-header .header-main .things {
@@ -208,7 +219,7 @@ body .container {
   background: url({{"/images/graphs.png?v=2" | prepend: site.baseurl}}) no-repeat;
 }
 .digging-item .digging-shortcut .digging-label {
-  color: #333;
+  color: #4d4741;
   font-size: 16px;
   font-weight: bold;
 }
@@ -255,7 +266,7 @@ body .container {
   padding-top: 15px;
 }
 .digging-item .digging-posts-by-category .post-item .post-preview {
-  border-left: solid 2px #333;
+  border-left: solid 3px #4d4741;
   padding: 15px;
 }
 .digging-item .digging-posts-by-category .post-item .post-preview .post-meta {
@@ -297,7 +308,9 @@ body .container {
 }
 .site-footer .footer-meta {
   align-items: flex-end;
+  -webkit-align-items: flex-end;
   justify-content: center;
+  -webkit-justify-content: center;
   border-bottom: solid 4px white;
   padding: 45px 0 0 0;
 }
@@ -323,7 +336,9 @@ body .container {
   padding: 0 60px;
 }
 .site-footer .footer-main {
+  -webkit-justify-content: center;
   justify-content: center;
+  -webkit-align-items: flex-start;
   align-items: flex-start;
   background-color: #DA6D5E;
   padding: 0 0 30px 0;
@@ -344,7 +359,9 @@ body .container {
 }
 .site-footer .footer-main .footer-personal-stuffs {
   padding: 15px 22px;
+  -webkit-align-items: flex-start;
   align-items: flex-start;
+  -webkit-justify-content: flex-start;
   justify-content: flex-start;
 }
 .site-footer .footer-main .footer-personal-stuffs > * {
