@@ -315,7 +315,7 @@ body .container {
   padding: 45px 0 0 0;
 }
 .site-footer .footer-meta .footer-logo {
-  padding: 0 0 15px 0;
+  padding: 0 15% 15px 0;
 }
 .site-footer .footer-meta .footer-logo .logo {
   margin: auto;
@@ -325,7 +325,6 @@ body .container {
   background: url({{ "/images/graphs.png?v=2" | prepend: site.baseurl }}) no-repeat;
 }
 .site-footer .footer-meta .footer-about {
-  margin-left: 20%;
   border-left: solid 2px white;
   border-right: solid 2px white;
 }
@@ -368,7 +367,7 @@ body .container {
   margin-right: 45px;
 }
 .site-footer .footer-main .graphs {
-  padding: 30px 45px 0 45px;
+  padding: 30px 3% 0 3%;
   border-right: solid 2px white;
   border-left: solid 2px white;
 }
