@@ -1,12 +1,12 @@
 ---
 layout: marketing
 ---
-<div class="home row">
+<div class="home row flex-container">
   <ul class="digging-list uncontent-list">
   {% for page in site.pages %}
     {% if page.active %}
       <li class="digging-item flex-container">
-          <div class="decorate hidden-xs hidden-sm">
+          <div class="decorate hidden-xs">
             <div class="digging-shortcut">
               <a class="digging-logo digging-{{page.type}}" href="{{page.url | prepend: site.baseurl}}"></a>
               <a class="digging-label" href="{{page.url | prepend: site.baseurl}}">{{page.title}}</a>
@@ -17,10 +17,10 @@ layout: marketing
             </div>
           </div>
           <div class="content">
-            <p class="digging-describe hidden-xs hidden-sm">{{page.description}}</p>
+            <p class="digging-describe hidden-xs">{{page.description}}</p>
             <h3 class="digging-page-title"><strong>Newest Diggin'</strong></h3>
             <ul class="digging-posts-by-category uncontent-list">
-            {% for post in site.categories[page.type] limit:5 %}
+            {% for post in site.categories[page.type] limit:3 %}
                 <li class="post-item">
                   <div class="flex-container">
                     <div class="post-preview">
@@ -44,4 +44,35 @@ layout: marketing
     {% endif %}
   {% endfor %}
   </ul>
+  <div data-spy="affix" data-offset-top="60" data-offset-bottom="200" class="frequency hidden-xs hidden-sm">
+    <h4><strong>Frequency Stuffs</strong></h4>
+    <label>Ruby basic</label>
+    {% highlight ruby %}
+    def print_hi(name)
+      puts "Hi, #{name}"
+    end
+    print_hi('Tom')
+    #=> prints 'Hi, Tom' to STDOUT.
+    {% endhighlight %}
+    <label>Transitions Only After Page Load</label>
+    <h5>HTML: add a class of "preload" to the body element.</h5>
+{% highlight html %}
+<body class="preload">
+{% endhighlight %}
+    <h5>CSS: then ensure no transitions would happen:</h5>
+{% highlight css %}
+.preload * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -ms-transition: none !important;
+  -o-transition: none !important;
+}
+{% endhighlight %}
+    <h5>jQuery: then removed that class on page load.</h5>
+{% highlight js %}
+$("window").load(function() {
+  $("body").removeClass("preload");
+});
+{% endhighlight %}
+  </div>
 </div>

@@ -218,25 +218,37 @@ body {
   }
 }
 .home {
-
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-align-content: stretch;
+  align-content: stretch;
+  > .frequency {
+    -webkit-flex: 1;
+    flex: 1;
+    background-color: white;
+    padding: 45px 30px;
+  }
 }
 .digging-list {
   list-style: none;
-  padding: 30px 0;
+  padding: 0;
   max-width: 900px;
-  margin: auto;
   background-color: white;
-  border-left: solid 2px #4d4741;
-  border- right: solid 2px #4d4741;
+  border- right: solid 3px #4d4741;
+}
+.digging-item:last-child {
+  border: none;
 }
 .digging-item {
-  padding: 30px 0;
+  padding: 0;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
   -webkit-align-items: flex-start;
   border-bottom: solid 2px #4d4741;
   .decorate {
-    padding: 0 30px 0 45px;
+    padding: 30px 30px 0 45px;
     .digging-shortcut {
       > * {
         float: right;
@@ -287,7 +299,7 @@ body {
   }
   .content {
     max-width: 850px;
-    padding: 0 0 0 15px;
+    padding: 30px 0 30px 15px;
     .digging-describe {
       font-style: italic;
       opacity: .6;
