@@ -1,0 +1,60 @@
+---
+layout: post
+title:  "Magento Controller: Hello World tutorial"
+date:   2015-03-3 00:14:43
+categories: magento
+timeToRead: 15
+description: >
+  Magento has created a more abstract MVC pattern.
+  The MVC architecture: the goal of separating data access, business logic and user-interface code from one anther.
+---
+<h3>Typical MVCs</h3>
+<p>The architecture of most PHP MVC frameworks will look something like this:</p>
+<ol>
+  <li>URL is intercepted by a single PHP file (usually called a Front Controller).</li>
+  <li>This PHP file will examine the URL, and derive a controller name and an action name (a process that's often called routing).</li>
+  <li>The derived controller is instantiated.</li>
+  <li>The method name matching the derived action name is called on the controller.</li>
+  <li>This action method will instantiate and call methods on models, depending on the request variables.</li>
+  <li>The action method will also prepare a data structure of information, which is passed on to the view.</li>
+  <li>The view then renders HTML, using the information in the data structure it has received from the controller.</li>
+</ol>
+<p>While this pattern was a great leap forward from the "each php file is a page" pattern established early on, for some software engineers, it's still a hack. Common complaints are:</p>
+<ul>
+  <li>The Front Controller PHP file still operates in the global namespace.</li>
+  <li>
+    Convention over configuration leads to less modularity
+    <ul>
+      <li>URLs routing is often inflexible</li>
+      <li>Controllers are often bound to specific views.</li>
+      <li>Even when a system offers a way to override these defaults, the convention leads to applications
+      where it's diffcult/impossible to drop in a new model, view, or controller implementation without massive re-factoring.</li>
+    </ul>
+  </li>
+</ul>
+<h3>Magento's More Abstract MVC Pattern</h3>
+<p>As you've probably guessed, the Magento team <strong>shares this world view</strong> and has created a <em>more abstract MVC pattern</em> that looks something like this: (bolded texts are the differences from typical MVC)</p>
+<ol>
+  <li>A URL is intercepted by a single PHP file.</li>
+  <li><strong>This PHP file instantiates a Magento application.</strong></li>
+  <li><strong>The Magento application instantiates a Front Controller object.</strong></li>
+  <li><strong>Front Controller instantiates any number of Router objects (specified in global config)</strong></li>
+  <li><strong>Routers check the request URL for a "match".</strong></li>
+  <li><strong>If a match is found, an Action Controller and Action are derived.</strong></li>
+  <li><strong>Action Controller is instantiated and the method name matching the Action Name is called.</strong></li>
+  <li><strong>This action method will instantiated and call methods on models, depending on the request.</strong></li>
+  <li><strong>This Action Controller will then instantiate a Layout Object.</strong></li>
+  <li><strong>This Layout Object will, based on some request variables and system properties (also known as "handles"), create a list of Block objects that are valid for this request.</strong></li>
+  <li><strong>Layout will also call an output method on certain Block objects, which start a nested rendering (Blocks will include other Blocks).</strong></li>
+  <li><strong>Each Block has a corresponding Template file. Blocks contain PHP logic, templates contain HTML and PHP output code.</strong></li>
+  <li><strong>Blocks refer directly back to the models for their data. In other words, <em>the Action Controller does not pass them a data structure</em>.</strong></li>
+</ol>
+<p>We'll eventually touch on each part of this request, but for now we're converned with the Front Controller -> Routers -> Action Controller section.</p>
+<h3>Hello World</h3>
+It's time for Hello World. We're going to
+<ol>
+  <li>Create a Hello World module in the Magento system.</li>
+  <li>Configure this module with routes.</li>
+  <li>Create Action Controller(s) for our routes.</li>
+</ol>
+<h3>Create Hello World Module</h3>
