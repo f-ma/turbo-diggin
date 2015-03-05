@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Multistore's Mean?"
+date:   2015-03-5 00:13:56
+categories: magento
+timeToRead: 15
+description: >
+  One of Magento's advanced features allows for management of multiple websites and stores within one installation, and
+  we have an amazing system to support this: GWS - aka "Global, Website, Store"
+---
+<h3>Overview: How Multiple Websites & Stores Work</h3>
+<ul>
+  <li><strong>Global</strong>: the entire installation.</li>
+  <li><strong>Websites</strong>: "parents" of stores, can share customer data or not.</li>
+  <li><strong>Stores (or store view groups)</strong>: "children" of websites, in which Products and Categories are managed. A root category is configured for each store view group, so, which allows multiple stores under the same website to have totally different catalog structures.</li>
+  <li><strong>Store View:</strong>: A <strong>store</strong> needs one or more store views to be browse-able in the front-end. The catalog structure per store view will always be the same, it simply allows for multiple presentations of the data in the front. 90% of implementations will likely use store views to <em>allow customer to switch between 2 or more languages</em>.</li>
+</ul>
+<img class="framize" src="../images/postmagento_multiple_websites_diagram" />
