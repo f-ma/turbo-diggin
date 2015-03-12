@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Magento URL rewrites"
+title:  "Magento URL Rewrites"
 date:   2015-03-12 00:11:15
 categories: magento
 timeToRead: 15
@@ -8,3 +8,21 @@ description: >
     Magento is a web application implementing a Front Controller pattern, and this means that most HTTP request are routed to the index.php in the root folder.
     In order to display a category, a product, or a non-catalog information page Magento parses the incoming URL to determine which modules and controllers must be engaged to process the request.
 ---
+<h3>Two significant drawbacks of typical MVC URL pattern</h3>
+<ul>
+    <li>
+        <strong>It is NOT human friendly</strong>: The IDs used in these URLs tell users
+    nothing about the shop products or categories.</li>
+    <li>
+        <strong>NOT search engine optimized</strong>: These URLs contain only generic terms ("catalog", "product", "category") that have little effect in achieving high search engine positions.
+    </li>
+</ul>
+
+<h2>So,</h2>
+<h3>Want to improve this?</h3>
+<p>Magento uses a <strong>rewrite engine</strong> to <strong>match</strong> descriptive URLs to its resources. The rewrite engine is a part of Magento core system and is responsible for matching incoming descriptive URLs to controllers, actions, and entity IDs.</p>
+<p>It is also tasked with <strong>automated creation</strong> of descriptive URLs for Magento resource.</p>
+
+<h2>Digging</h2>
+
+<h3>URL rewrites in the shop: products and categories</h3>
